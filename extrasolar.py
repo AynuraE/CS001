@@ -17,9 +17,9 @@ TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
 
 def main():
 
-    set_clear_color(0, 0, 0)    # black background
-
     clear()
+    background = load_image("galaxy.jpg")
+    draw_image(background, 0, 0)
 
     # Draw the system in its current state.
     solar.draw(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, PIXELS_PER_METER)
@@ -27,11 +27,11 @@ def main():
     # Update the system for its next state.
     solar.update(TIMESTEP * TIME_SCALE)
 
-sun = Body(1.98892e30, 0, 0, 0, 0, 20, 1, 1, 0) #yellow sun
-mercury = Body(0.33e24, -57.9e9, 0, 0, 47890, 3, 1, 0.5, 0) #orange mercury
-venus = Body(4.87e24, -108.2e9, 0, 0, 35040, 6, 0, 1, 0) #green venus
-earth = Body(5.97e24, -149.6e9, 0, 0, 29790, 8, 0, 0, 1) # blue earth
-mars = Body(0.642e24, -227.9e9, 0, 0,	24140, 4, 1, 0, 0) #red mars
+sun = Body(1.98892e30, 0, 0, 0, 0, "sun.png") #yellow sun
+mercury = Body(0.33e24, -57.9e9, 0, 0, 47890, "mercury.png") #orange mercury
+venus = Body(4.87e24, -108.2e9, 0, 0, 35040, "venus.png") #green venus
+earth = Body(5.97e24, -149.6e9, 0, 0, 29790, "earth.png") # blue earth
+mars = Body(0.642e24, -227.9e9, 0, 0,	24140, "mars.png") #red mars
 
 solar = System([sun, mercury, venus, earth, mars])
 

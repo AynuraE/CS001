@@ -6,17 +6,15 @@ from cs1lib import * #importing from cs1lib
 
 #Body class represents physical objects with various properties. Each Body can draw itself and update its motion over time
 class Body: #class X (name of the class)
-    def __init__(self, mass, x, y, v_x, v_y, pixel_radius, r, g, b): #The Body class will have x, y, v_x, v_y instance variables, at least, to represent the location and velocity of the Body.
+    def __init__(self, mass, x, y, v_x, v_y, image_path): #The Body class will have x, y, v_x, v_y instance variables, at least, to represent the location and velocity of the Body.
         #We need self in every method
         self.x = x     #position of the body, x, in meters
         self.y = y     #position of the body, y, in meters
         self.v_x = v_x #velocity for x
         self.v_y = v_y #velocity for y
         self.mass = mass # mass of the body
-        self.pixel_radius = pixel_radius # size of the body when drawn on screen in pixels
-        self.r = r #color red
-        self.g = g #color green
-        self.b = b #color blue
+        self.image_path = load_image(image_path) #for loading images
+        self.angle = 0
 
     def draw(self, cx, cy, pixels_per_meter): #draw methods for both classes
         # From simulation coordinates (meters) into pixel coordinates
@@ -25,10 +23,8 @@ class Body: #class X (name of the class)
         ppixels_y = self.y * pixels_per_meter
         s_x = cx + ppixels_x
         s_y = cy - ppixels_y
-        #The color of the body
-        set_fill_color(self.r, self.g, self.b)
-        # Draw the circle on the screen
-        draw_circle(s_x, s_y, self.pixel_radius)
+        self.angle = self.angle + 3 #rotating the body by 3 degrees
+        draw_image(self.image_path, s_x, s_y, self.image_path.width()/2, self.image_path.height()/2, self.angle)
 
     def update_position(self, timestep): #update_postion and update_velocity methods for the location and velocity in Body class.
         self.x = self.x + self.v_x * timestep #updating the position for x

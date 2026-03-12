@@ -16,10 +16,9 @@ FRAMERATE = 30              # frames per second
 TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
 
 def main():
-
-    set_clear_color(0, 0, 0)    # black background
-
     clear()
+    background = load_image("galaxy.jpg")
+    draw_image(background, 0, 0)
 
     # Draw the system in its current state.
     earth_moon.draw(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, PIXELS_PER_METER)
@@ -28,8 +27,8 @@ def main():
     earth_moon.update(TIMESTEP * TIME_SCALE)
 
 
-earth = Body(5.9736e24, 0, 0, 0, 0, 24, 0, 0, 1)            # blue earth
-moon = Body(7.3477e22, 3.84403e8, 0, 0, 1022, 4, 1, 1, 1)   # white moon
+earth = Body(5.9736e24, 0, 0, 0, 0, "earth2.png")   # blue earth
+moon = Body(7.3477e22, 3.84403e8, 0, 0, 1022, "moon.png")   # white moon
 earth_moon = System([earth, moon])
 
 start_graphics(main, 2400, framerate=FRAMERATE)
