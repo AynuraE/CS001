@@ -1,0 +1,29 @@
+START| CLASS, FOCO, GO_BACK_TO_SLEEP| You didn't hear your alarm and missed your 9L. Will you a) go to class anyways, b) eat something at Foco or c) go back to sleep?
+
+CLASS| LATE, COFFEE| You respect the 90K tuition spent on your education and choose to go to class. Do you a) go to class straight or b) stop for coffee?
+
+FOCO | FRIENDS, STUDY | You want to have breakfast at Foco. Do you a) sit with friends or b) study?
+
+GO_BACK_TO_SLEEP | OVERSLEEP | You don't care. Sleep matters.
+
+COFFEE | SPILL, ENERGY | Your favorite matcha coffee and you.
+
+LATE || You arrive late. Half of the class missed. The end.
+
+SPILL || Coffee spills on you. The end.
+
+ENERGY | ACE_QUIZ, FALL_ASLEEP | The caffeine hits.
+
+FRIENDS | PARTY, GOSSIP | You yap with your friends for hours.
+
+STUDY || You make up for missed class by watching the lecture. The end.
+
+PARTY || You become part of Animal House and go out. The end.
+
+GOSSIP || Your close friend is dating someone, your roommate has got an internship at Goldman Sachs...Let's gossip?. The end.
+
+ACE_QUIZ || You ace the quiz for CS1. The end.
+
+FALL_ASLEEP || The caffeine makes you feel dizzy and crashes you out. The end.
+
+OVERSLEEP || You spend half of the day sleeping. The end.
