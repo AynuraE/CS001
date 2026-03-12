@@ -533,7 +533,7 @@ def draw_rectangle(x, y, w, h):
     canvas.draw_rectangle(x, y, w, h)
 
 
-def draw_text(string, x, y):
+def draw_text(string: object, x: object, y: object) -> None:
     canvas.draw_text(string, x, y)
 
 
